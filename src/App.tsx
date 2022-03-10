@@ -1,6 +1,6 @@
 import React, { useCallback, useReducer, useRef } from 'react';
 import './App.css';
-import Lists from "../src/components/Lists";
+// import Lists from "../src/components/Lists";
 
 interface Todo {
   id: number,
@@ -49,6 +49,10 @@ function App() {
         todos.map((todo) => (
           <div key={todo.id}>
             {todo.text}
+            <button onClick={() => dispatch({
+              type: "REMOVE",
+              id: todo.id,
+            })}>Remove</button>
           </div>
         ))
       }
